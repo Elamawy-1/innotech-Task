@@ -1,0 +1,19 @@
+body {
+    padding: 30px;
+}
+h1, h2 {
+    text-align: center;
+    color: green;
+}
+.btn-fixed {
+    width: 200px;
+    margin-bottom: 10px;
+}
+.form-wrapper {
+    max-width: 500px;
+    margin: auto;
+}
+.table-wrapper {
+    margin-top: 30px;
+    background: #f9f9f9;
+}

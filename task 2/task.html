@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum using loop</title>
+</head>
+<body>
+    <h3>Sum from 1 to n using for loop</h3>
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onclick="calculateSum()">Calculate</button>
+    <p id="output"></p>
+
+
+    <script>
+      
+function calculateSum() {
+    const n = parseInt(document.getElementById("num").value);
+    const output = document.getElementById("output");
+
+    if (isNaN(n) || n <= 0) {
+        output.textContent = "من فضلك ادخل عدد صحيح أكبر من صفر.";
+        return;
+    }
+
+    const start1 = performance.now();
+    const formulaSum = (n * (n + 1)) / 2;
+    const end1 = performance.now();
+    const formulaTime = end1 - start1;
+
+    const start2 = performance.now();
+    let loopSum = 0;
+    for (let i = 1; i <= n; i++) {
+        loopSum += i;
+    }
+    const end2 = performance.now();
+    const loopTime = end2 - start2;
+
+    output.innerHTML = `
+        <strong> result:</strong><br>
+        - using formula ${formulaSum} <br>
+        - using for loop: ${loopSum} <br><br>
+
+        <strong> time complexity </strong><br>
+        - using formula ${formulaTime.toFixed(4)} ms<br>
+        - using for loop ${loopTime.toFixed(4)} ms<br>
+    `;
+}
+
+    </script>
+</body>
+</html>

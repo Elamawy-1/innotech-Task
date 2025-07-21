@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Print Numbers</title>
+</head>
+<body>
+    <h3>Print numbers from 1 to n (without trailing comma)</h3>
+    <input type="number" id="n" placeholder="Enter a number">
+    <button onclick="printNumbers()">Print</button>
+    <p id="output"></p>
+
+    <script>
+        function printNumbers() {
+            let n = parseInt(document.getElementById("n").value);
+            if (isNaN(n) || n <= 0) {
+                alert("Please enter a valid number");
+                return;
+            }
+            let result = "";
+            for (let i = 1; i <= n; i++) {
+                result += i;
+                if (i < n) result += ", ";
+            }
+            document.getElementById("output").innerText = result;
+        }
+    </script>
+</body>
+</html>
